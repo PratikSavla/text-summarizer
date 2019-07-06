@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Summarization</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/img-01.jpg');">
+			<!-- <div class="wrap-login100 p-t-190 p-b-30">
+				<form class="login100-form validate-form">
+					
+				</form>
+			</div> -->
+					<div>
+						<img src="bravis.png" width=300px height=300px>
+					</div>
+					<!-- <div>
+						<p id="article"></p>
+						<!- <p ></p> --
+					</div> -->
+					<!-- <span id="greeting">
+						Enter the text/article.... to summarize
+					</span> -->
+
+					
+					<!-- <div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required"> -->
+						<!-- <input class="input100" id="name-input" type="text" placeholder="Text Here"> -->
+
+
+					<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">ENTER TEXT</span>
+  </div>
+  <textarea id = "name-input" class="form-control" aria-label="With textarea"></textarea>
+</div>
+					
+						 
+					<!-- </div> -->
+
+					
+
+
+					<div class="text-center ">
+						<button id='name-button' type="button" class="btn btn-success">Submit</button>
+					 </div>
+					
+						<b><h1 id = "greeting"></h1></b>
+
+
+			
+
+
+
+
+					
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<script>
+		$("#name-button").click(function(event){
+			let message = {
+				name: $("#name-input").val()
+			}
+			$.post("http://127.0.0.1:5000/hello",JSON.stringify(message),function(response){
+				$("#greeting").text(response.greeting);
+				$("#article").text(response.article);
+				console.log(response);
+			});
+		});
+	</script>
+</body>
+</html>
