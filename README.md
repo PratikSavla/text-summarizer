@@ -1,5 +1,5 @@
 # text-summarizer
-Simple Tensorflow implementation of text summarization and abstractive text summarization using nlp
+Simple Tensorflow implementation of text summarization and abstractive text summarization using nltk library.
 
 ## Model
 Encoder-Decoder model with attention mechanism.
